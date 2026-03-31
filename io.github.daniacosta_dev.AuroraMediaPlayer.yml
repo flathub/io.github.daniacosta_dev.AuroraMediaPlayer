@@ -63,12 +63,6 @@ modules:
         url: https://github.com/LuaJIT/LuaJIT.git
         disable-shallow-clone: true
         commit: 659a61693aa3b87661864ad0f12eee14c865cd7f
-        x-checker-data:
-          type: json
-          url: https://api.github.com/repos/LuaJIT/LuaJIT/branches/v2.1
-          commit-query: .commit.sha
-          version-query: .commit.sha
-          timestamp-query: .commit.commit.committer.date
 
   - name: libmpv
     buildsystem: meson
