@@ -48,8 +48,27 @@ modules:
         url: https://github.com/libass/libass/releases/download/0.17.3/libass-0.17.3.tar.gz
         sha256: da7c348deb6fa6c24507afab2dee7545ba5dd5bbf90a137bfe9e738f7df68537
 
+  - name: luajit
+    buildsystem: simple
+    build-commands:
+      - make PREFIX=/app
+      - make install PREFIX=/app
+    cleanup:
+      - /bin
+      - /include
+      - /lib/pkgconfig
+      - /share/man
+    sources:
+      - type: git
+        url: https://github.com/LuaJIT/LuaJIT.git
+        disable-shallow-clone: true
+        commit: 659a61693aa3b87661864ad0f12eee14c865cd7f
+
   - name: libmpv
     buildsystem: meson
+    build-options:
+      env:
+        PKG_CONFIG_PATH: /app/lib/pkgconfig:/app/share/pkgconfig
     config-opts:
       - -Dlibmpv=true
       - -Dcplayer=false
@@ -57,7 +76,7 @@ modules:
       - -Dtests=false
       - -Dalsa=disabled
       - -Dmanpage-build=disabled
-      - -Dlua=disabled
+      - -Dlua=enabled
     sources:
       - type: archive
         url: https://github.com/mpv-player/mpv/archive/refs/tags/v0.38.0.tar.gz
@@ -96,5 +115,5 @@ modules:
     sources:
       - type: git
         url: https://github.com/daniacosta-dev/aurora-media-player
-        commit: 5a2ef3fab769c605cec2dc2f880b327946ef5b24
+        commit: da1a3a0c6e2aaf40b80e4faebda8aa7ade37c42f
       - cargo-sources.json
