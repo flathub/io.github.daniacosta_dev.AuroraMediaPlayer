@@ -115,5 +115,5 @@ modules:
     sources:
       - type: git
         url: https://github.com/daniacosta-dev/aurora-media-player
-        commit: be26d9f327a80bb4860d939f9d81b7925585b8df
+        commit: 06fdd21ce4e6eaaea2121dfd56e19cae81820ddb
       - cargo-sources.json
