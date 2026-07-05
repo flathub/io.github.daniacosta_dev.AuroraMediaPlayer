@@ -88,8 +88,8 @@ modules:
       - install -Dm755 yt-dlp /app/bin/yt-dlp
     sources:
       - type: file
-        url: https://github.com/yt-dlp/yt-dlp/releases/download/2026.03.17/yt-dlp
-        sha256: 3bda0968a01cde70d26720653003b28553c71be14dcb2e5f4c24e9921fdad745
+        url: https://github.com/yt-dlp/yt-dlp/releases/download/2026.07.04/yt-dlp
+        sha256: 495be29ff4d9d4e9be7eabdfef225221e5d5282e77f2f505abc6dca80349f3fd
         dest-filename: yt-dlp
         x-checker-data:
           type: json
